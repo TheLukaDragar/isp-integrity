@@ -7,6 +7,7 @@ import javax.crypto.Mac;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.Key;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
@@ -62,6 +63,9 @@ public class HMACExample {
 
         // Even better
         System.out.println(verify3(tag1, tag2, key));
+
+        // The best
+        System.out.println(MessageDigest.isEqual(tag1, tag2));
     }
 
     public static boolean verify1(byte[] tag1, byte[] tag2) {
